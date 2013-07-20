@@ -6,12 +6,16 @@ setTimeout helper library for the browser
 ## Usage ##
 
 ```javascript
-var pool = new Timeout();
-pool.add(function () { console.log(1); }, 1000);
-pool.add(function () { console.log(2); }, 2000);
-pool.add(function () { console.log(3); }, 3000);
 
-setTimeout(pool.clearAll, 2500);
+require('timeout', function (Timeout) { // Optional AMD support
+
+  var pool = new Timeout();
+  pool.add(function () { console.log(1); }, 1000);
+  pool.add(function () { console.log(2); }, 2000);
+  pool.add(function () { console.log(3); }, 3000);
+  setTimeout(pool.clearAll, 2500);
+  
+});
 ```
 
 ## License (MIT) ##
